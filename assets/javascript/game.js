@@ -8,21 +8,23 @@ var guessesLeft, guessedLetters, letterToGuess;
 resetGame();
 display();
 
-// When User Guesses //
+// EVENT - When User Guesses //
 document.onkeyup = function() {
   var guess = event.key;
   if (guess === letterToGuess) {
     win();
-  } else if (guessesLeft - 1 === 0) {
+  } 
+  else if (guessesLeft - 1 === 0) {
     lost();
-  } else {
-    fail(guess);
-    // Add 
   }
-
+  else if (guessedLetters.indexOf(guess) === -1){
+    fail(guess);
+    console.log(guessedLetters);
+  }
+  else
+    alert("Hey fool, you already guessed that!")
   display();
 }
-
 
 // Display to HTML //
 function display() {
@@ -50,9 +52,9 @@ function lost() {
 
 // When User Guesses Incorrectly //
 function fail(letter) {
-  guessesLeft--;
-  guessedLetters.push(letter);
-}
+  		guessesLeft--;
+  		guessedLetters.push(letter);
+  	}
 
 // Reset Game //
 function resetGame() {
@@ -62,4 +64,12 @@ function resetGame() {
   console.log("Letter to guess: " + letterToGuess);
 }
 
-// User Can Only Enter Alaphabetic characters //
+
+// Check Function //
+  function checkGuess () {
+    if (guessedLetters.indexOf(guess) === -1){
+      guessesLeft--;
+      alert("Hey! You already pushed that!  Try again")
+    }
+  }
+ 

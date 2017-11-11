@@ -12,6 +12,7 @@ display();
 document.onkeyup = function() {
   var guess = event.key;
   if (guess === letterToGuess) {
+    alert("Nice guess!"); 
     win();
   } 
   else if (guessesLeft - 1 === 0) {
@@ -35,7 +36,7 @@ function display() {
   winsP.innerHTML = wins;
   losesP.innerHTML = loses;
   guessLeft.innerHTML = guessesLeft;
-  letterGuessed.innerHTML = guessedLetters.join(",");
+  letterGuessed.innerHTML = guessedLetters.join(", ");
 }
 
 // When User Wins //
@@ -64,12 +65,4 @@ function resetGame() {
   console.log("Letter to guess: " + letterToGuess);
 }
 
-
-// Check Function //
-  function checkGuess () {
-    if (guessedLetters.indexOf(guess) === -1){
-      guessesLeft--;
-      alert("Hey! You already pushed that!  Try again")
-    }
-  }
  

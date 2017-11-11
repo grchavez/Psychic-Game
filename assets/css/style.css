@@ -1,0 +1,35 @@
+#psychicAct {
+	border-style: solid;
+	border-width: 1px;
+	text-align: center;
+
+}
+
+h1 {
+		font-family: 'Mystery Quest', cursive;
+
+}
+
+#wrapper {
+	display: block;	
+}
+
+#sub {
+		font-family: 'Mystery Quest', cursive;
+		border-bottom-style: solid;
+		
+}
+#winz {
+	display: inline-block;
+	padding: 5px 10px;
+	border-style: solid;
+	border-radius: 10px;
+}
+
+#losez {
+	display: inline-block;
+	padding: 5px 10px;
+	border-style: solid;
+	border-radius: 10px;
+
+}
